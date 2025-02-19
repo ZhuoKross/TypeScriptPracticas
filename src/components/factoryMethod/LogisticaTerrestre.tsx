@@ -1,13 +1,18 @@
-import Camion from "./Camion";
+import Camion from "./Camion"
 import IFactory from "../../interfaces/components/IFactory"
+import ProductProps from "../../interfaces/components/Iproduct";
+import React from "react";
 
 
-
-const LogisticaTerreste: React.FC<IFactory> = ({createTransport}) => {
-  return(
-        <Camion nameTransport="Camion" repartir={createTransport}></Camion>
-    );
+class LogisticaTerreste implements IFactory{
+  createTransport(): ProductProps {
+    return{
+      render: ():React.ReactElement => <Camion />
+    }
+  }
 }
+
+
 
 
 export default LogisticaTerreste;

@@ -1,11 +1,15 @@
 import Barco from "./barco";
 import IFactory from "../../interfaces/components/IFactory"
+import ProductProps from "../../interfaces/components/Iproduct";
+import React from "react";
 
 
-const LogisticaMaritima: React.FC<IFactory> = ({createTransport}) => {
-    return(
-        <Barco nameTransport="Barco" repartir={createTransport}></Barco>
-    );
+class LogisticaMaritima implements IFactory{
+    createTransport(): ProductProps {
+        return{
+            render: (): React.ReactElement => <Barco />
+        };
+    }
 }
 
 

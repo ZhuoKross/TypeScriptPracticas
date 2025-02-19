@@ -1,16 +1,9 @@
-import ProductProps from "../../interfaces/components/Iproduct"
-
-
-const Camion: React.FC<ProductProps> = ({nameTransport, repartir}) => {
+const Camion: React.FC = () => {
     return(
         <div>
-            <h2>{nameTransport}</h2>
-            <button onClick={repartir}>
-                tipo de transporte 
-            </button>
+            <h2>Camion</h2>
         </div>
     );
-
 }
 
 

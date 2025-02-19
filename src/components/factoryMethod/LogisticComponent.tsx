@@ -1,23 +1,29 @@
 import LogisticaMaritima from "./LogisticaMaritima";
 import LogisticaTerreste from "./LogisticaTerrestre";
-
+import LogisticaAerea from "./LogisticaAerea";
 
 
 const LogisticComponent: React.FC = () => {
     
-    const behaviourDeliverCamion = (): string => {
-        return "transporta por via terrestre";
-      };
-    
-      const behaviourDeliverBarco = (): string => {
-        return "transporta por via maritima";
-      };
+    const logisticaTerrestreFactory = new LogisticaTerreste();
+    const camionProduct = logisticaTerrestreFactory.createTransport();
 
+    const logisticaMaritimaFactory = new LogisticaMaritima();
+    const barcoProduct = logisticaMaritimaFactory.createTransport();
+
+    const logisticaAereaFactory = new LogisticaAerea();
+    const avionProduct = logisticaAereaFactory.createTransport();
+    
+
+    const ElementCamion = camionProduct.render();
+    const ElementBarco = barcoProduct.render();
+    const ElementoAvion = avionProduct.render();
 
     return(
         <>
-            <LogisticaMaritima createTransport={behaviourDeliverBarco}></LogisticaMaritima>
-            <LogisticaTerreste createTransport={behaviourDeliverCamion}></LogisticaTerreste>
+          {ElementBarco}
+          {ElementCamion}
+          {ElementoAvion}
         </>
     );
 }

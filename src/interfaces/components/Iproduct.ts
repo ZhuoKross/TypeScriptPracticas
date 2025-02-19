@@ -1,4 +1,6 @@
+import { JSX, ReactElement } from "react";
+
+
 export default interface ProductProps{
-    nameTransport: string;
-    repartir: () => void;
+    render: () => ReactElement;
 }
