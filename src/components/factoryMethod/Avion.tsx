@@ -1,5 +1,5 @@
 import React from "react";
-import ProductProps from "../../interfaces/components/Iproduct";
+
 
 
 const Avion: React.FC = () => {
