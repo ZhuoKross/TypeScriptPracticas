@@ -1,6 +1,6 @@
 import Barco from "./barco";
-import IFactory from "../../interfaces/components/IFactory"
-import ProductProps from "../../interfaces/components/Iproduct";
+import IFactory from "../../interfaces/components/FactoryMethod/IFactory"
+import ProductProps from "../../interfaces/components/FactoryMethod/Iproduct";
 import React from "react";
 
 
