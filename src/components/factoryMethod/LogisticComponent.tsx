@@ -20,11 +20,11 @@ const LogisticComponent: React.FC = () => {
     const ElementoAvion = avionProduct.render();
 
     return(
-        <>
+        <div className="flex">
           {ElementBarco}
           {ElementCamion}
           {ElementoAvion}
-        </>
+        </div>
     );
 }
 
