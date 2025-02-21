@@ -1,12 +1,13 @@
 import UIFactory from "./UIFactory";
 
+// Form Component
+const uiFactory = new UIFactory();
+const form = uiFactory.createForm();
+const formComponent = form.render();
 
 
 
 const MainComponent: React.FC = () => {
-    const uiFactory = new UIFactory();
-    const form = uiFactory.createForm();
-    const formComponent = form.render();
 
     return(
 
