@@ -1,6 +1,9 @@
+import InputType from "./types/InputType"
+
+
 export default interface ProductInputProps {
-    title?: string
-    placeholder?: string
+    title: string
+    placeholder: string
     value?: string 
-    type?: string
+    type: InputType
 }

@@ -2,27 +2,43 @@ import React from "react";
 import AbstractUI from "../../interfaces/components/AbstractFactory/AbstractUI";
 import ProductForm from "../../interfaces/components/AbstractFactory/IProductForm";
 import FormComponent from "./FormComponent";
-import InputFactory from "./InputFactory";
-import ButtonFactory from "./ButtonFactory";
+import FunctionInputFactory from "./InputFactory";
+import FunctionButtonFactory from "./ButtonFactory";
+import ProductInputProps from "../../interfaces/components/AbstractFactory/ProductInputProps";
+import ProductButtonProps from "../../interfaces/components/AbstractFactory/ProductButtonProps";
 
 
+// Props for the inputs elements
+const propsInputExample: ProductInputProps = {title: "ejemplo:", placeholder: "escribe aquí", type: "email"}
+const propsInputName: ProductInputProps = {title: "Nombre:", placeholder: "Escribe tu nombre", type: "text"}
 
-// Creating the input component
-const inputFactory = new InputFactory();
-const inputText = inputFactory.createInput();
-const inputTextElement = inputText.render();
+// Props for the button elements
+const propsButtonClose: ProductButtonProps = {title: "Cerrar", type: "Close"}
+
+
+// Creating the input component for the example
+const inputfactory = FunctionInputFactory(propsInputExample);
+const inputExample = inputfactory.createInput();
+const inputExampleElement = inputExample.render();
+
+
+// Creating the input for the name field
+const inputfactory2 = FunctionInputFactory(propsInputName);
+const inputName = inputfactory2.createInput();
+const inputNameElement = inputName.render();
 
 
 // Button Component
-const buttonFactory = new ButtonFactory();
-const button = buttonFactory.createButton();
-const buttonElement = button.render();
+const buttonFactory = FunctionButtonFactory(propsButtonClose);
+const buttonClose = buttonFactory.createButton();
+const buttonCloseElement = buttonClose.render();
+
 
 
 class UIFactory implements AbstractUI{
     createForm(): ProductForm {
         return{
-            render: ():React.ReactElement =>  <FormComponent fieldsData={[inputTextElement, buttonElement]}/> 
+            render: ():React.ReactElement =>  <FormComponent fieldsData={[inputExampleElement, inputNameElement, buttonCloseElement]}/> 
         }
     }
 }
